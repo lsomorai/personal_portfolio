@@ -1,7 +1,7 @@
-import React from 'react'
-import LinkedIn from '@mui/icons-material/LinkedIn';
-import Email from '@mui/icons-material/Email';
-import Github from '@mui/icons-material/GitHub';
+import React from "react"
+import LinkedIn from "@mui/icons-material/LinkedIn";
+import Email from "@mui/icons-material/Email";
+import Github from "@mui/icons-material/GitHub";
 import "../styles/Home.css";
 
 function Home(){
