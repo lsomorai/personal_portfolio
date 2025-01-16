@@ -1,49 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
 } from "react-vertical-timeline-component";
 import "react-vertical-timeline-component/style.min.css";
-import School from "@mui/icons-material/School";
+import "../styles/Experience.css";
+import ExperienceModal from "../components/ExperienceModal";
 
 function Experience() {
+  const [selectedExperience, setSelectedExperience] = useState(null);
+
+  const experiences = [
+    {
+      title: "Software Developer Intern",
+      company: "Tech Corp",
+      date: "May 2023 - Aug 2023",
+      description: "Worked on developing scalable APIs and optimized performance.",
+    },
+    {
+      title: "Teaching Assistant",
+      company: "University of Calgary",
+      date: "Sept 2024 - Dec 2024",
+      description: "Assisted students in understanding software engineering concepts.",
+    },
+  ];
+
+  const openModal = (experience) => setSelectedExperience(experience);
+  const closeModal = () => setSelectedExperience(null);
+
   return (
-    <div className="experience">
-      <VerticalTimeline lineColor="#3e497a">
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="2019 - 2024"
-          iconStyle={{ background: "#3e497a", color: "#fff" }}
-          icon={<School />}
-        >
-          <h3 className="vertical-timeline-element-title">
-            Simon Fraser University, Burnaby, BC
-          </h3>
-
-          <h4 className="vertical-timeline-element-subtitle">
-            Bachelor's Degree
-          </h4>
-
-          <p> Computer Engineering</p>
-        </VerticalTimelineElement>
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          date="2024 - 2025"
-          iconStyle={{ background: "#3e497a", color: "#fff" }}
-          icon={<School />}
-        >
-          <h3 className="vertical-timeline-element-title">
-            University of Calgary, Calgary, AB
-          </h3>
-
-          <h4 className="vertical-timeline-element-subtitle">
-            Master's Degree
-          </h4>
-
-          <p> Software Engineering</p>
-        </VerticalTimelineElement>
+    <section id="experience" className="experience">
+      <h1>Experience</h1>
+      <VerticalTimeline lineColor="#ffcc80">
+        {experiences.map((exp, index) => (
+          <VerticalTimelineElement
+            key={index}
+            className="vertical-timeline-element--work"
+            date={exp.date}
+            iconStyle={{ background: "#ffcc80", color: "#fff" }}
+            onTimelineElementClick={() => openModal(exp)}
+          >
+            <h3>{exp.title}</h3>
+            <h4>{exp.company}</h4>
+          </VerticalTimelineElement>
+        ))}
       </VerticalTimeline>
-    </div>
+      {selectedExperience && (
+        <ExperienceModal experience={selectedExperience} onClose={closeModal} />
+      )}
+    </section>
   );
 }
 

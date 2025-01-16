@@ -1,0 +1,11 @@
+.experience {
+    padding: 40px;
+  }
+  
+  .vertical-timeline-element-content {
+    transition: transform 0.3s;
+  }
+  
+  .vertical-timeline-element-content:hover {
+    transform: scale(1.05);
+  }

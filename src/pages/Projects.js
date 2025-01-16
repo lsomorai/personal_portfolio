@@ -1,20 +1,33 @@
-import React from "react";
-import ProjectItem from "../components/ProjectItem";
-import { ProjectList } from "../helpers/ProjectList";
+import React, { useState } from "react";
 import "../styles/Projects.css";
+import { ProjectList } from "../helpers/ProjectList";
+import ProjectModal from "../components/ProjectModal";
 
 function Projects() {
+  const [selectedProject, setSelectedProject] = useState(null);
+
+  const openModal = (project) => setSelectedProject(project);
+  const closeModal = () => setSelectedProject(null);
+
   return (
-    <div className="projects">
-      <h1> My Personal Projects</h1>
-      <div className="projectList">
-        {ProjectList.map((project, idx) => {
-          return (
-            <ProjectItem id={idx} name={project.name} image={project.image} />
-          );
-        })}
+    <section id="projects" className="projects">
+      <h1>My Projects</h1>
+      <div className="project-grid">
+        {ProjectList.map((project, index) => (
+          <div
+            key={index}
+            className="project-card"
+            onClick={() => openModal(project)}
+          >
+            <img src={project.image} alt={project.name} />
+            <h3>{project.name}</h3>
+          </div>
+        ))}
       </div>
-    </div>
+      {selectedProject && (
+        <ProjectModal project={selectedProject} onClose={closeModal} />
+      )}
+    </section>
   );
 }
 

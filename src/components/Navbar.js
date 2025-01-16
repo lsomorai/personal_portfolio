@@ -1,35 +1,29 @@
-import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useState } from "react";
 import "../styles/Navbar.css";
-import ReorderIcon from "@mui/icons-material/Reorder";
 
 function Navbar() {
-    const [expandNavbar, setExpandNavbar] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
-    const location = useLocation();
+  const toggleMenu = () => setMenuOpen(!menuOpen);
 
-    useEffect(() => {
-        setExpandNavbar(false);
-    }, [location]);
-
-    return (
-        <div className="navbar" id={expandNavbar ? "open" : "close"}>
-            <div className="toggleButton">
-                <button 
-                    onClick={() => {
-                        setExpandNavbar((prev) => !prev);
-                    }} 
-                >
-                    <ReorderIcon /> 
-                </button>
-            </div>
-            <div className="links">
-                <Link to="/"> Home </Link>
-                <Link to="/projects"> Projects </Link>
-                <Link to="/experience"> Experience </Link>
-            </div>
+  return (
+    <nav className="navbar">
+      <div className="navbar-container">
+        <div className="navbar-logo">Lucien</div>
+        <div className={`navbar-menu ${menuOpen ? "open" : ""}`}>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#footer">Contact</a></li>
+          </ul>
         </div>
-    );
+        <button className="menu-toggle" onClick={toggleMenu}>
+          ☰
+        </button>
+      </div>
+    </nav>
+  );
 }
 
 export default Navbar;
