@@ -12,16 +12,16 @@ function Experience() {
 
   const experiences = [
     {
-      title: "Software Developer Intern",
-      company: "Tech Corp",
-      date: "May 2023 - Aug 2023",
-      description: "Worked on developing scalable APIs and optimized performance.",
+      title: "Master of Software Engineering",
+      company: "University of Calgary",
+      date: "Sep 2024 - Apr 2025",
+      description: "",
     },
     {
-      title: "Teaching Assistant",
-      company: "University of Calgary",
-      date: "Sept 2024 - Dec 2024",
-      description: "Assisted students in understanding software engineering concepts.",
+      title: "Bachelor of Computer Engineering",
+      company: "Simon Fraser University",
+      date: "Sep 2019 - Apr 2024",
+      description: "",
     },
   ];
 
@@ -31,13 +31,13 @@ function Experience() {
   return (
     <section id="experience" className="experience">
       <h1>Experience</h1>
-      <VerticalTimeline lineColor="#ffcc80">
+      <VerticalTimeline lineColor="#1d3557">
         {experiences.map((exp, index) => (
           <VerticalTimelineElement
             key={index}
             className="vertical-timeline-element--work"
             date={exp.date}
-            iconStyle={{ background: "#ffcc80", color: "#fff" }}
+            iconStyle={{ background: "#1d3557", color: "#fff" }}
             onTimelineElementClick={() => openModal(exp)}
           >
             <h3>{exp.title}</h3>

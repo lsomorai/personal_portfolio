@@ -1,28 +1,30 @@
-import React from "react";
-import LinkedIn from "@mui/icons-material/LinkedIn";
-import Email from "@mui/icons-material/Email";
-import GitHub from "@mui/icons-material/GitHub";
-import "../styles/Home.css";
+import React from 'react';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'; 
+import CursorAnimation from '../components/CursorAnimation';
+import '../styles/Home.css';
 
-function Home() {
+const Home = () => {
   return (
     <section id="home" className="home">
+      <CursorAnimation />
       <div className="home-content">
-        <div className="text">
-          <h1>Hi, I'm Lucien</h1>
-          <p>Software developer passionate about creating impactful solutions.</p>
-          <div className="icons">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><LinkedIn /></a>
-            <a href="mailto:lucien@example.com"><Email /></a>
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer"><GitHub /></a>
-          </div>
-        </div>
-        <div className="photo">
-          <img src="/assets/myphoto.jpg" alt="Lucien" />
+        <img src="/assets/profilepic.jpg" alt="Lucien Somorai" className="profile-picture" />
+        <h1>Lucien Somorai</h1>
+        <p>Software Engineer | Aspiring Leader | Lifelong Learner</p>
+        <div className="social-links">
+          <a href="https://github.com/lsomorai" target="_blank" rel="noopener noreferrer">
+            <FaGithub className="icon" /> GitHub
+          </a>
+          <a href="mailto:lucien.somorai@ucalgary.ca">
+            <FaEnvelope className="icon" /> Email
+          </a>
+          <a href="https://linkedin.com/in/lucien-somorai/" target="_blank" rel="noopener noreferrer">
+            <FaLinkedin className="icon" /> LinkedIn
+          </a>
         </div>
       </div>
     </section>
   );
-}
+};
 
 export default Home;

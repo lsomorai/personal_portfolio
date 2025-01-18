@@ -1,18 +1,22 @@
-import React from "react";
-import "../styles/Modal.css";
+import React from 'react';
+import '../styles/ProjectModal.css';
 
-function ProjectModal({ project, onClose }) {
+const ProjectModal = ({ project, onClose }) => {
   return (
-    <div className="modal">
-      <div className="modal-content">
-        <button className="close-button" onClick={onClose}>×</button>
-        <h2>{project.name}</h2>
-        <img src={project.image} alt={project.name} />
+    <div className="project-modal" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+        {/* Prevent click events from bubbling up */}
+        <button className="close-button" onClick={onClose}>
+          &times;
+        </button>
+        <h2>{project.title}</h2>
         <p>{project.description}</p>
-        <a href={project.github} target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+          View on GitHub
+        </a>
       </div>
     </div>
   );
-}
+};
 
 export default ProjectModal;

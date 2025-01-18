@@ -1,27 +1,44 @@
-import React, { useState } from "react";
-import "../styles/Projects.css";
-import { ProjectList } from "../helpers/ProjectList";
-import ProjectModal from "../components/ProjectModal";
+import React, { useState } from 'react';
+import ProjectCard from '../components/ProjectCard';
+import ProjectModal from '../components/ProjectModal.js';
+import '../styles/Projects.css';
 
-function Projects() {
+const projects = [
+  {
+    title: 'MediCal',
+    description: 'MediCal is a comprehensive healthcare management system designed to streamline patient, doctor, and administrative workflows.',
+    githubLink: 'https://github.com/lsomorai/medical-frontend',
+    image: '/assets/medical.png', // Path to project image
+  },
+  {
+    title: 'AcmePlex',
+    description: 'AcmePlex is a movie theatre ticket reservation application allowing users to search for movies, select showtimes, choose seats, and make payments for tickets.',
+    githubLink: 'https://github.com/lsomorai/AcmePlex-Movie-Theater-Ticket-Reservation-App',
+    image: '/assets/acmeplex.png', // Path to project image
+  },
+];
+
+const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
 
-  const openModal = (project) => setSelectedProject(project);
-  const closeModal = () => setSelectedProject(null);
+  const openModal = (project) => {
+    setSelectedProject(project);
+  };
+
+  const closeModal = () => {
+    setSelectedProject(null);
+  };
 
   return (
     <section id="projects" className="projects">
-      <h1>My Projects</h1>
-      <div className="project-grid">
-        {ProjectList.map((project, index) => (
-          <div
+      <h2>Projects</h2>
+      <div className="project-cards">
+        {projects.map((project, index) => (
+          <ProjectCard
             key={index}
-            className="project-card"
+            project={project}
             onClick={() => openModal(project)}
-          >
-            <img src={project.image} alt={project.name} />
-            <h3>{project.name}</h3>
-          </div>
+          />
         ))}
       </div>
       {selectedProject && (
@@ -29,6 +46,6 @@ function Projects() {
       )}
     </section>
   );
-}
+};
 
 export default Projects;
