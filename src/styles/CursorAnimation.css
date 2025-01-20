@@ -4,11 +4,11 @@
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(45deg, #1d3557, #457b9d, #a8dadc, #f1faee);
+    background: linear-gradient(45deg, #a8dadc, #f1faee);
     background-size: 400% 400%;
     animation: backgroundAnimation 15s infinite;
-    z-index: -1; /* Behind all other content */
-    pointer-events: none; /* Prevent interference with other elements */
+    z-index: -1; 
+    pointer-events: none;
   }
   
   .cursor-hole {
