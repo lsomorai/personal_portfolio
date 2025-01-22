@@ -8,9 +8,18 @@
   color: black;
 }
 
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
 .paragraph-text {
   text-align: left;
   color: black;
+}
+
+.paragraph-text p {
+  margin-bottom: 1rem;
 }
 
 .home-content {
@@ -37,10 +46,11 @@
   color: black;
   text-decoration: none;
   font-size: 1.2em;
-  transition: color 0.3s ease;
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
 .social-links a:hover {
+  transform: scale(1.1);
   color: #f39c12; 
 }
 
