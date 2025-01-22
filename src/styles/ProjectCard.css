@@ -16,7 +16,7 @@
   }
   
   .project-image {
-    flex: 3; /* Takes up most of the card */
+    flex: 3; 
     background-size: cover;
     background-position: center;
     width: 100%;
@@ -24,11 +24,11 @@
   }
   
   .project-text {
-    flex: 1; /* Reserved space for text */
+    flex: 1; 
     background: rgba(0, 0, 0, 0.8);
     color: white;
     text-align: center;
     display: flex;
-    align-items: center; /* Centers text vertically */
-    justify-content: center; /* Centers text horizontally */
+    align-items: center; 
+    justify-content: center; 
   }

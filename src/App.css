@@ -1,6 +1,6 @@
 .App {
   font-family: "Arial", sans-serif;
-  background-color: #fffdf5; /* Light yellow background */
+  background-color: #fffdf5; 
   height: 100vh;
   overflow-x: hidden;
 }
@@ -18,7 +18,6 @@ section {
   box-sizing: border-box;
 }
 
-/* Additional Section Styling */
 .home, .projects, .experience {
   padding: 50px;
   display: flex;

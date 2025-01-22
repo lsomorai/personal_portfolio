@@ -8,6 +8,11 @@
   color: black;
 }
 
+.paragraph-text {
+  text-align: left;
+  color: black;
+}
+
 .home-content {
   z-index: 1;
 }
@@ -36,10 +41,10 @@
 }
 
 .social-links a:hover {
-  color: #f39c12; /* Highlight color on hover */
+  color: #f39c12; 
 }
 
 .icon {
-  margin-right: 8px; /* Space between icon and text */
-  font-size: 1.5em; /* Icon size */
+  margin-right: 8px; 
+  font-size: 1.5em; 
 }

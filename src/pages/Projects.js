@@ -8,13 +8,13 @@ const projects = [
     title: 'MediCal',
     description: 'MediCal is a comprehensive healthcare management system designed to streamline patient, doctor, and administrative workflows.',
     githubLink: 'https://github.com/lsomorai/medical-frontend',
-    image: '/assets/medical.png', // Path to project image
+    image: '/assets/medical.png', 
   },
   {
     title: 'AcmePlex',
     description: 'AcmePlex is a movie theatre ticket reservation application allowing users to search for movies, select showtimes, choose seats, and make payments for tickets.',
     githubLink: 'https://github.com/lsomorai/AcmePlex-Movie-Theater-Ticket-Reservation-App',
-    image: '/assets/acmeplex.png', // Path to project image
+    image: '/assets/acmeplex.png',
   },
 ];
 
