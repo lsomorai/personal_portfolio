@@ -1,10 +1,13 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'; 
 import BackgroundAnimation from '../components/BackgroundAnimation';
 import '../styles/Home.css';
 
 const Home = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { triggerOnce: false }); 
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
@@ -16,13 +19,13 @@ const Home = () => {
   };
 
   return (
-    <section id="home" className="home">
+    <section id="home" className="home" ref={sectionRef}>
       <BackgroundAnimation />
       <motion.div 
         className="home-content" 
         variants={staggerContainer} 
         initial="hidden" 
-        animate="visible"
+        animate={isInView ? 'visible' : 'hidden'} 
       >
         <motion.img 
           src="/assets/profilepic.jpg" 

@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import { motion, useInView  } from 'framer-motion';
 import ProjectCard from '../components/ProjectCard';
 import ProjectModal from '../components/ProjectModal.js';
 import '../styles/Projects.css';
@@ -20,6 +21,8 @@ const projects = [
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState(null);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { triggerOnce: false }); 
 
   const openModal = (project) => {
     setSelectedProject(project);
@@ -29,18 +32,45 @@ const Projects = () => {
     setSelectedProject(null);
   };
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
+
+  const staggerContainer = {
+    hidden: { opacity: 1 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+  };
+
   return (
-    <section id="projects" className="projects">
-      <h2>Projects</h2>
-      <div className="project-cards">
+    <section id="projects" className="projects" ref={sectionRef}>
+      <motion.h1 
+        variants={fadeInUp} 
+        initial="hidden" 
+        animate={isInView ? 'visible' : 'hidden'} 
+      >
+        Projects
+      </motion.h1>
+      <motion.div 
+        className="project-cards" 
+        variants={staggerContainer} 
+        initial="hidden" 
+        animate={isInView ? 'visible' : 'hidden'} 
+      >
         {projects.map((project, index) => (
-          <ProjectCard
+          <motion.div 
             key={index}
-            project={project}
-            onClick={() => openModal(project)}
-          />
+            variants={fadeInUp} 
+            initial="hidden" 
+            animate={isInView ? 'visible' : 'hidden'} 
+          >
+            <ProjectCard
+              project={project}
+              onClick={() => openModal(project)}
+            />
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
       {selectedProject && (
         <ProjectModal project={selectedProject} onClose={closeModal} />
       )}
