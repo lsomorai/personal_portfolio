@@ -1,11 +1,17 @@
-.experience {
+  .experience {
     padding: 40px;
+    overflow: hidden;
+  }
+
+  .timeline-container {
+    margin-top: 20px;
   }
   
   .vertical-timeline-element-content {
-    transition: transform 0.3s;
+    transition: transform 0.3s, box-shadow 0.3s;
   }
   
   .vertical-timeline-element-content:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }

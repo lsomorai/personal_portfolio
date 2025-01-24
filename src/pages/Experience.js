@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -9,6 +10,8 @@ import ExperienceModal from "../components/ExperienceModal";
 
 function Experience() {
   const [selectedExperience, setSelectedExperience] = useState(null);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { triggerOnce: true });
 
   const experiences = [
     {
@@ -28,9 +31,20 @@ function Experience() {
   const openModal = (experience) => setSelectedExperience(experience);
   const closeModal = () => setSelectedExperience(null);
 
+  const fadeInUp = {
+    hidden: { opacity: 0, y: 50 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+  };
+
   return (
-    <section id="experience" className="experience">
-      <h1>Experience</h1>
+    <section id="experience" className="experience" ref={sectionRef}>
+      <motion.h1
+        variants={fadeInUp}
+        initial="hidden"
+        animate={isInView ? "visible" : "hidden"}
+      >
+        Experience
+      </motion.h1>
       <VerticalTimeline lineColor="#1d3557">
         {experiences.map((exp, index) => (
           <VerticalTimelineElement
@@ -40,8 +54,14 @@ function Experience() {
             iconStyle={{ background: "#1d3557", color: "#fff" }}
             onTimelineElementClick={() => openModal(exp)}
           >
-            <h3>{exp.title}</h3>
-            <h4>{exp.company}</h4>
+            <motion.div
+              variants={fadeInUp}
+              initial="hidden"
+              animate={isInView ? "visible" : "hidden"}
+            >
+              <h3>{exp.title}</h3>
+              <h4>{exp.company}</h4>
+            </motion.div>
           </VerticalTimelineElement>
         ))}
       </VerticalTimeline>
