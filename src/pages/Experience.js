@@ -15,6 +15,12 @@ function Experience() {
 
   const experiences = [
     {
+      title: "Full Stack Developer",
+      company: "Vibes Meet LLC",
+      date: "Feb 2025 - Present",
+      description: "",
+    },
+    {
       title: "Master of Software Engineering",
       company: "University of Calgary",
       date: "Sep 2024 - Apr 2025",

@@ -17,6 +17,12 @@ const projects = [
     githubLink: 'https://github.com/lsomorai/AcmePlex-Movie-Theater-Ticket-Reservation-App',
     image: '/assets/acmeplex.png',
   },
+  {
+    title: 'StockEd',
+    description: 'StockSim is a fun, competitive stock market simulation with real-time data, leaderboards, and challenges. Learn, trade, and compete with friends in a risk-free environment.',
+    githubLink: 'https://github.com/lsomorai/stock-simulation',
+    image: '/assets/stocked.png',
+  },
 ];
 
 const Projects = () => {
