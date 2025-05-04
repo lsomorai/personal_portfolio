@@ -19,9 +19,21 @@ const projects = [
   },
   {
     title: 'StockEd',
-    description: 'StockSim is a fun, competitive stock market simulation with real-time data, leaderboards, and challenges. Learn, trade, and compete with friends in a risk-free environment.',
+    description: 'StockEd is a fun, competitive stock market simulation with real-time data, leaderboards, and challenges. Learn, trade, and compete with friends in a risk-free environment.',
     githubLink: 'https://github.com/lsomorai/stock-simulation',
     image: '/assets/stocked.png',
+  },
+  {
+    title: 'Bike Sharing',
+    description: 'Bike Sharing utilizes machine learning models to predict hourly bike rental demand, highlighting key factors like temperature, time, and season.',
+    githubLink: 'https://github.com/lsomorai/Bike-Sharing-Demand',
+    image: '/assets/bike.jpeg',
+  },
+  {
+    title: 'New York Taxi',
+    description: 'New York Taxi is a fare prediction project for New York City that uses Spark and machine learning models, identifying trip distance and time-related features as key determinants.',
+    githubLink: 'https://github.com/lsomorai/New-York-Taxi',
+    image: '/assets/taxi.jpg',
   },
 ];
 
@@ -63,19 +75,36 @@ const Projects = () => {
         initial="hidden" 
         animate={isInView ? 'visible' : 'hidden'} 
       >
-        {projects.map((project, index) => (
-          <motion.div 
-            key={index}
-            variants={fadeInUp} 
-            initial="hidden" 
-            animate={isInView ? 'visible' : 'hidden'} 
-          >
-            <ProjectCard
-              project={project}
-              onClick={() => openModal(project)}
-            />
-          </motion.div>
-        ))}
+        <div className="project-row">
+          {projects.slice(0, 3).map((project, index) => (
+            <motion.div 
+              key={index}
+              variants={fadeInUp}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+            >
+              <ProjectCard
+                project={project}
+                onClick={() => openModal(project)}
+              />
+            </motion.div>
+          ))}
+        </div>
+        <div className="project-row">
+          {projects.slice(3).map((project, index) => (
+            <motion.div 
+              key={index + 3}
+              variants={fadeInUp}
+              initial="hidden"
+              animate={isInView ? 'visible' : 'hidden'}
+            >
+              <ProjectCard
+                project={project}
+                onClick={() => openModal(project)}
+              />
+            </motion.div>
+          ))}
+        </div>
       </motion.div>
       {selectedProject && (
         <ProjectModal project={selectedProject} onClose={closeModal} />
