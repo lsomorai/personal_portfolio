@@ -56,7 +56,7 @@ const Home = () => {
           <p>
             When I’m not coding, you’ll probably find me hitting shuttles on the badminton court, stepping to the rhythm on Pump It Up, 
             or exploring creative ways to grow both personally and professionally. I’m also a Toastmasters member working on sharpening my 
-            communication skills—because connecting with people is just as important as writing clean code!
+            communication skills, because connecting with people is just as important as writing clean code!
           </p>
           <p>
             Feel free to reach out to collaborate, share ideas, or just have a friendly chat.
