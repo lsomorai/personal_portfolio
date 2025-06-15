@@ -26,11 +26,11 @@ section {
   flex-direction: column;
 }
 
-:root {
+/* :root {
   --bg-color: #fffdf5;
   --text-color: #000;
   --bg-gradient: linear-gradient(45deg, #a8dadc, #f1faee);
-}
+} */
 .app.dark {
   --bg-color: #121212;
   --text-color: #ffffff;
