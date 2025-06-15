@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  color: black;
+  color: var(--text-color);
 }
 
 h1 {
@@ -15,7 +15,7 @@ h1 {
 
 .paragraph-text {
   text-align: left;
-  color: black;
+  color: var(--text-color);
 }
 
 .paragraph-text p {
@@ -43,7 +43,7 @@ h1 {
 .social-links a {
   display: flex;
   align-items: center;
-  color: black;
+  color: var(--text-color);
   text-decoration: none;
   font-size: 1.2em;
   transition: transform 0.3s ease, color 0.3s ease;

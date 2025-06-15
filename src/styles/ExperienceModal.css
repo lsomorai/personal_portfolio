@@ -29,7 +29,7 @@
     background: none;
     border: none;
     cursor: pointer;
-    color: #333;
+    color: var(--text-color);
   }
   
   .close-button:hover {
