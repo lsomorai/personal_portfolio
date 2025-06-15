@@ -11,7 +11,7 @@ const App = () => {
   const toggleTheme = () => setDarkMode(!darkMode);
   return (
     <div className={`app ${darkMode ? 'dark' : 'light'}`}>
-      <Header onToggleTheme={toggleTheme} />
+      <Header darkMode={darkMode} onToggleTheme={toggleTheme} />
       <Home />
       <Projects />
       <Experience />
