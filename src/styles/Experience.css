@@ -21,3 +21,12 @@
     transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   }
+
+  .app.dark .vertical-timeline-element-content {
+    background-color: var(--bg-color) !important;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5) !important;
+  }
+
+  .app.dark .vertical-timeline-element-content::before {
+    border-color: var(--bg-color) !important;
+  }
