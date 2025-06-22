@@ -13,11 +13,12 @@
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  justify-content: space-between;
+  padding: 0 1rem;
 }
 
-.navbar ul {
+.nav-links {
+  flex: 1;
   display: flex;
   justify-content: center;
   list-style: none;
@@ -25,11 +26,11 @@
   padding: 0;
 }
 
-.navbar ul li {
+.nav-links li {
   margin: 0 15px;
 }
 
-.navbar ul li a {
+.nav-links li a {
   color: var(--text-color);
   text-decoration: none;
   font-size: 1.2em;
@@ -37,7 +38,7 @@
   transition: color 0.3s ease;
 }
 
-.navbar ul li a:hover {
+.nav-links li a:hover {
   color: var(--text-color);
   text-decoration: underline;
 }
@@ -49,12 +50,20 @@
   font-size: 1.5em;
   cursor: pointer;
   padding: 0 1rem;
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
+  margin-left: auto;
 }
 
 .theme-toggle:hover {
   color: #f39c12;
+}
+
+@media (max-width: 600px) {
+  .nav-links li {
+    margin: 0 10px;
+  }
+
+  .theme-toggle {
+    font-size: 1.2em;
+    padding: 0 0.5rem;
+  }
 }
