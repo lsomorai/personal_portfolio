@@ -1,19 +1,19 @@
 .App {
   font-family: "Arial", sans-serif;
   background-color: #fffdf5; 
-  height: 100vh;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
 .sections-container {
   scroll-snap-type: y mandatory;
-  height: 100vh;
+  min-height: 100vh;
   overflow-y: scroll;
 }
 
 section {
   scroll-snap-align: start;
-  height: 100vh;
+  min-height: 100vh;
   padding: 20px;
   box-sizing: border-box;
 }
