@@ -31,6 +31,7 @@ jobs:
         run: npm test -- --watchAll=false
 
       - name: Build production bundle
+        id: build
         run: npm run build
 
       - name: Upload build artifact
