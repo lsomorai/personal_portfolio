@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import '../styles/Header.css';
 import { FaSun, FaMoon } from 'react-icons/fa';
 
@@ -20,5 +21,10 @@ const Header = ({ darkMode, onToggleTheme }) => (
     </nav>
   </header>
 );
+
+Header.propTypes = {
+  darkMode: PropTypes.bool.isRequired,
+  onToggleTheme: PropTypes.func.isRequired,
+};
 
 export default Header;

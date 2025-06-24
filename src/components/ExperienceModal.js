@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "../styles/ExperienceModal.css";
 
 function ExperienceModal({ experience, onClose }) {
@@ -13,5 +14,14 @@ function ExperienceModal({ experience, onClose }) {
     </div>
   );
 }
+
+ExperienceModal.propTypes = {
+  experience: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+  }).isRequired,
+  onClose: PropTypes.func.isRequired,
+};
 
 export default ExperienceModal;

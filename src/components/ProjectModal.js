@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { FaGithub } from 'react-icons/fa'; 
 import '../styles/ProjectModal.css';
 
@@ -17,6 +18,15 @@ const ProjectModal = ({ project, onClose }) => {
       </div>
     </div>
   );
+};
+
+ProjectModal.propTypes = {
+  project: PropTypes.shape({
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    githubLink: PropTypes.string.isRequired,
+  }).isRequired,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default ProjectModal;
