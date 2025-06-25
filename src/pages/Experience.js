@@ -15,22 +15,29 @@ function Experience() {
 
   const experiences = [
     {
+      title: "Founding AI Engineer",
+      company: "Maple AI Systems Inc.",
+      date: "May 2025 - Present",
+      description:
+        "Leading development of generative and agentic AI features. Integrated LLM-backed tooling that reduced manual input by 35% while architecting scalable systems with vector databases and robust APIs.",
+    },
+    {
       title: "Full Stack Developer",
       company: "Vibes Meet LLC",
       date: "Feb 2025 - Present",
-      description: "",
+      description: "Re-engineered the React/Tailwind UI for 30% better responsiveness and optimised Django APIs with PostgreSQL queries to cut response times by 40% and enable bi-weekly releases.",
     },
     {
       title: "Master of Software Engineering",
       company: "University of Calgary",
       date: "Sep 2024 - Apr 2025",
-      description: "",
+      description: "Graduate studies focused on machine learning, advanced software architecture and large-scale data analytics.",
     },
     {
       title: "Bachelor of Computer Engineering",
       company: "Simon Fraser University",
       date: "Sep 2019 - Apr 2024",
-      description: "",
+      description: "Completed extensive coursework in data structures, algorithms, database systems, operating systems, software engineering and AI.",
     },
   ];
 
